@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 49.1727, 10 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 67.5019 ]
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 48.8574, 135.45 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 35.7493, 24.2301 )
+gravity_scale = 4.0
+
+[node name="SpawnWalls" type="Node" parent="."]
+
+[node name="Position2D" type="Position2D" parent="SpawnWalls"]
+position = Vector2( 301.883, 67.6211 )
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 0.2
+one_shot = false
+autostart = false
+
+[node name="UpTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="UpTimer" to="." method="_on_UpTimer_timeout"]
