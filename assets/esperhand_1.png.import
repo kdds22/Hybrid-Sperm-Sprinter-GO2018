@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nome.png-5ef88ae8aee6b786b306f34a66c1ae58.stex"
+path="res://.import/esperhand_1.png-afc9042affcda05691c6e1febb5721ca.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome.png"
-dest_files=[ "res://.import/nome.png-5ef88ae8aee6b786b306f34a66c1ae58.stex" ]
+source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/esperhand_1.png"
+dest_files=[ "res://.import/esperhand_1.png-afc9042affcda05691c6e1febb5721ca.stex" ]
 
 [params]
 

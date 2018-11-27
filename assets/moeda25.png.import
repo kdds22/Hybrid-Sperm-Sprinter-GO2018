@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Hero.png-7c8897b547c7ec6cfb38d65270b413ac.stex"
+path="res://.import/moeda25.png-7da91818169fcb374d2b05d31f860599.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/Hero.png"
-dest_files=[ "res://.import/Hero.png-7c8897b547c7ec6cfb38d65270b413ac.stex" ]
+source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/moeda25.png"
+dest_files=[ "res://.import/moeda25.png-7da91818169fcb374d2b05d31f860599.stex" ]
 
 [params]
 
