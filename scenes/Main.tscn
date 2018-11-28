@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome.png" type="Texture" id=4]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/play.png" type="Texture" id=5]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rank.png" type="Texture" id=6]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome best.png" type="Texture" id=7]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome score.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,7 +20,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 67.5019 ]
 }
 
+[node name="Ground" parent="." instance=ExtResource( 2 )]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 48.8574, 135.45 )
 input_pickable = false
 collision_layer = 1
@@ -25,18 +34,25 @@ constant_angular_velocity = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 35.7493, 24.2301 )
 gravity_scale = 4.0
 
 [node name="SpawnWalls" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Position2D" type="Position2D" parent="SpawnWalls"]
 position = Vector2( 301.883, 67.6211 )
 
+[node name="Position2D2" type="Position2D" parent="SpawnWalls"]
+position = Vector2( 301.883, 36.829 )
+
+[node name="Position2D3" type="Position2D" parent="SpawnWalls"]
+position = Vector2( 301.883, 98.0547 )
+
 [node name="Timer" type="Timer" parent="."]
 process_mode = 1
-wait_time = 0.2
+wait_time = 0.21
 one_shot = false
 autostart = false
 
@@ -45,6 +61,59 @@ process_mode = 1
 wait_time = 5.0
 one_shot = true
 autostart = false
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="PowerUps" type="Node2D" parent="."]
+
+[node name="GameOver" type="Node2D" parent="."]
+pause_mode = 2
+editor/display_folded = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 59.0
+margin_top = 6.0
+margin_right = 184.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.576471, 0.576471, 0.576471, 1 )
+
+[node name="Sprite" type="Sprite" parent="GameOver"]
+position = Vector2( 119.376, 32.2637 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="GameOver"]
+position = Vector2( 92.1307, 113.998 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="GameOver"]
+position = Vector2( 150.564, 113.998 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+
+[node name="Sprite4" type="Sprite" parent="GameOver"]
+position = Vector2( 149.847, 56.9992 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 7 )
+
+[node name="Sprite5" type="Sprite" parent="GameOver"]
+position = Vector2( 93.5646, 56.9992 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 8 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="UpTimer" to="." method="_on_UpTimer_timeout"]
