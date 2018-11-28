@@ -8,11 +8,7 @@ func _process(delta):
 
 
 func _on_Coin_body_entered(body):
-	if body.is_in_group("Player"):
-		$Tween.interpolate_property(self, 'modulate', 1, 0, .2, Tween.TRANS_EXPO, Tween.EASE_IN)
-		$Tween.interpolate_property(self, 'scale', scale, Vector2(scale.x+.5, scale.y+.5), .2, Tween.TRANS_EXPO, Tween.EASE_IN)
-		$Tween.start()
-		body.up()
+	pass
 
 
 func _on_Tween_tween_completed(object, key):

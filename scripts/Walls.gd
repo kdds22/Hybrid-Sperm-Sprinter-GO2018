@@ -29,4 +29,8 @@ func _on_Timer_timeout():
 
 func _on_Walls_body_entered(body):
 	if body.is_in_group("Player"):
+		$AnimationPlayer.play("hit")
 		body.hit()
+
+
+
