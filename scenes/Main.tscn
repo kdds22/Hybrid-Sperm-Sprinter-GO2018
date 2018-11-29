@@ -1,13 +1,22 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome.png" type="Texture" id=4]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/play.png" type="Texture" id=5]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rank.png" type="Texture" id=6]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/shop.png" type="Texture" id=6]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome best.png" type="Texture" id=7]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome score.png" type="Texture" id=8]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/botao de voltar.png" type="Texture" id=9]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/esper_1.png" type="Texture" id=10]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rabolocked.png" type="Texture" id=11]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rabounlocked.png" type="Texture" id=12]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/ovulo_full.png" type="Texture" id=13]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/armlocked.png" type="Texture" id=14]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/armunlocked.png" type="Texture" id=15]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/capalocked.png" type="Texture" id=16]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/capaunlocked.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -58,7 +67,7 @@ autostart = false
 
 [node name="UpTimer" type="Timer" parent="."]
 process_mode = 1
-wait_time = 5.0
+wait_time = 6.0
 one_shot = true
 autostart = false
 
@@ -90,30 +99,366 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.576471, 0.576471, 0.576471, 1 )
 
-[node name="Sprite" type="Sprite" parent="GameOver"]
+[node name="Logo" type="Sprite" parent="GameOver"]
 position = Vector2( 119.376, 32.2637 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 
-[node name="Sprite2" type="Sprite" parent="GameOver"]
-position = Vector2( 92.1307, 113.998 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 5 )
+[node name="btn_Continue" type="TextureButton" parent="GameOver"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 71.0
+margin_top = 106.0
+margin_right = 372.0
+margin_bottom = 259.0
+rect_scale = Vector2( 0.1, 0.1 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
 
-[node name="Sprite3" type="Sprite" parent="GameOver"]
-position = Vector2( 150.564, 113.998 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 6 )
+[node name="btn_Shop" type="TextureButton" parent="GameOver"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 135.0
+margin_top = 106.0
+margin_right = 436.0
+margin_bottom = 259.0
+rect_scale = Vector2( 0.1, 0.1 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
 
-[node name="Sprite4" type="Sprite" parent="GameOver"]
+[node name="Best" type="Sprite" parent="GameOver"]
 position = Vector2( 149.847, 56.9992 )
 scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 7 )
 
-[node name="Sprite5" type="Sprite" parent="GameOver"]
+[node name="Score" type="Sprite" parent="GameOver"]
 position = Vector2( 93.5646, 56.9992 )
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 8 )
 
+[node name="Score_lbl" type="Label" parent="GameOver"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 71.0
+margin_top = 75.0
+margin_right = 111.0
+margin_bottom = 89.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "00000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Best_lbl" type="Label" parent="GameOver"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_top = 75.0
+margin_right = 170.0
+margin_bottom = 89.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "00000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Shop" type="Node2D" parent="."]
+pause_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 59.0
+margin_top = 5.0
+margin_right = 184.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.576471, 0.576471, 0.576471, 1 )
+
+[node name="btn_Back" type="TextureButton" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 126.0
+margin_top = 108.0
+margin_right = 427.0
+margin_bottom = 261.0
+rect_scale = Vector2( 0.1, 0.1 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 9 )
+
+[node name="Esperm_base" type="Sprite" parent="Shop"]
+position = Vector2( 90.3905, 25.3684 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 10 )
+
+[node name="Esperm_long" type="Sprite" parent="Shop"]
+position = Vector2( 150.391, 25.3684 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 11 )
+
+[node name="Esperm_long_normal" type="Sprite" parent="Shop"]
+visible = false
+position = Vector2( 150.391, 25.3684 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 12 )
+
+[node name="long_lbl" type="Label" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 135.0
+margin_top = 39.0
+margin_right = 155.0
+margin_bottom = 53.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "6"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="btn_BuyLong" type="TextureButton" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_top = 39.0
+margin_right = 455.0
+margin_bottom = 193.0
+rect_scale = Vector2( 0.05, 0.05 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+
+[node name="ovulo_long" type="Sprite" parent="Shop"]
+position = Vector2( 143.976, 42.5708 )
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 13 )
+
+[node name="Esperm_hand" type="Sprite" parent="Shop"]
+position = Vector2( 90.3905, 77.2596 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 14 )
+
+[node name="Esperm_hand_normal" type="Sprite" parent="Shop"]
+visible = false
+position = Vector2( 90.3905, 78.2596 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 15 )
+
+[node name="hand_lbl" type="Label" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 69.0
+margin_top = 89.0
+margin_right = 89.0
+margin_bottom = 103.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "10"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="btn_BuyHand" type="TextureButton" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 94.0
+margin_top = 89.0
+margin_right = 395.0
+margin_bottom = 243.0
+rect_scale = Vector2( 0.05, 0.05 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+
+[node name="ovulo_hand" type="Sprite" parent="Shop"]
+position = Vector2( 82.9764, 92.5708 )
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 13 )
+
+[node name="Esperm_cloak" type="Sprite" parent="Shop"]
+position = Vector2( 150.391, 77.2596 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 16 )
+
+[node name="Esperm_cloak_normal" type="Sprite" parent="Shop"]
+visible = false
+position = Vector2( 150.391, 77.2596 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 17 )
+
+[node name="cloak_lbl" type="Label" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 131.0
+margin_top = 89.0
+margin_right = 151.0
+margin_bottom = 103.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "20"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="btn_BuyCloak" type="TextureButton" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_top = 89.0
+margin_right = 455.0
+margin_bottom = 243.0
+rect_scale = Vector2( 0.05, 0.05 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+
+[node name="ovulo_cloak" type="Sprite" parent="Shop"]
+position = Vector2( 144.976, 92.5708 )
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 13 )
+
+[node name="current_ovulo_lbl" type="Label" parent="Shop"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 95.0
+margin_top = 112.0
+margin_right = 115.0
+margin_bottom = 126.0
+rect_scale = Vector2( 0.7, 0.7 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="current_ovulo" type="Sprite" parent="Shop"]
+position = Vector2( 113.976, 115.571 )
+scale = Vector2( 0.035, 0.035 )
+texture = ExtResource( 13 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="UpTimer" to="." method="_on_UpTimer_timeout"]
+[connection signal="pressed" from="GameOver/btn_Continue" to="." method="_on_btn_Continue_pressed"]
+[connection signal="pressed" from="GameOver/btn_Shop" to="." method="_on_btn_Shop_pressed"]
+[connection signal="pressed" from="Shop/btn_Back" to="." method="_on_btn_Back_pressed"]
+[connection signal="pressed" from="Shop/btn_BuyLong" to="." method="_on_btn_BuyLong_pressed"]
+[connection signal="pressed" from="Shop/btn_BuyHand" to="." method="_on_btn_BuyHand_pressed"]
+[connection signal="pressed" from="Shop/btn_BuyCloak" to="." method="_on_btn_BuyCloak_pressed"]
