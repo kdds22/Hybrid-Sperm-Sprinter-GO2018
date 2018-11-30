@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Ground.tscn" type="PackedScene" id=2]
@@ -8,20 +8,57 @@
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/shop.png" type="Texture" id=6]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome best.png" type="Texture" id=7]
 [ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome score.png" type="Texture" id=8]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/botao de voltar.png" type="Texture" id=9]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/esper_1.png" type="Texture" id=10]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rabolocked.png" type="Texture" id=11]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rabounlocked.png" type="Texture" id=12]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/ovulo_full.png" type="Texture" id=13]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/armlocked.png" type="Texture" id=14]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/armunlocked.png" type="Texture" id=15]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/capalocked.png" type="Texture" id=16]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/capaunlocked.png" type="Texture" id=17]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/SHOWG.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/botao de voltar.png" type="Texture" id=10]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/esper_1.png" type="Texture" id=11]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rabolocked.png" type="Texture" id=12]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rabounlocked.png" type="Texture" id=13]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/ovulo_full.png" type="Texture" id=14]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/armlocked.png" type="Texture" id=15]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/armunlocked.png" type="Texture" id=16]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/capalocked.png" type="Texture" id=17]
+[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/capaunlocked.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 49.1727, 10 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 15
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 15
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 12
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 20
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -167,15 +204,18 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 71.0
 margin_top = 75.0
-margin_right = 111.0
-margin_bottom = 89.0
+margin_right = 116.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
 text = "00000"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -195,13 +235,18 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
 text = "00000"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Shop" type="Node2D" parent="."]
 pause_mode = 2
+editor/display_folded = true
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Shop"]
 anchor_left = 0.0
@@ -241,32 +286,32 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
 
 [node name="Esperm_base" type="Sprite" parent="Shop"]
 position = Vector2( 90.3905, 25.3684 )
 scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="Esperm_long" type="Sprite" parent="Shop"]
 position = Vector2( 150.391, 25.3684 )
 scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Esperm_long_normal" type="Sprite" parent="Shop"]
 visible = false
 position = Vector2( 150.391, 25.3684 )
 scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="long_lbl" type="Label" parent="Shop"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 135.0
+margin_left = 130.0
 margin_top = 39.0
-margin_right = 155.0
+margin_right = 150.0
 margin_bottom = 53.0
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -275,7 +320,10 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "6"
+custom_fonts/font = SubResource( 4 )
+text = "5"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -306,27 +354,27 @@ texture_normal = ExtResource( 6 )
 [node name="ovulo_long" type="Sprite" parent="Shop"]
 position = Vector2( 143.976, 42.5708 )
 scale = Vector2( 0.02, 0.02 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="Esperm_hand" type="Sprite" parent="Shop"]
 position = Vector2( 90.3905, 77.2596 )
 scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="Esperm_hand_normal" type="Sprite" parent="Shop"]
 visible = false
 position = Vector2( 90.3905, 78.2596 )
 scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="hand_lbl" type="Label" parent="Shop"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 69.0
+margin_left = 68.0
 margin_top = 89.0
-margin_right = 89.0
+margin_right = 88.0
 margin_bottom = 103.0
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -335,7 +383,10 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
 text = "10"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -366,27 +417,27 @@ texture_normal = ExtResource( 6 )
 [node name="ovulo_hand" type="Sprite" parent="Shop"]
 position = Vector2( 82.9764, 92.5708 )
 scale = Vector2( 0.02, 0.02 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="Esperm_cloak" type="Sprite" parent="Shop"]
 position = Vector2( 150.391, 77.2596 )
 scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="Esperm_cloak_normal" type="Sprite" parent="Shop"]
 visible = false
 position = Vector2( 150.391, 77.2596 )
 scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="cloak_lbl" type="Label" parent="Shop"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 131.0
+margin_left = 130.0
 margin_top = 89.0
-margin_right = 151.0
+margin_right = 150.0
 margin_bottom = 103.0
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -395,7 +446,10 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
 text = "20"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -426,17 +480,17 @@ texture_normal = ExtResource( 6 )
 [node name="ovulo_cloak" type="Sprite" parent="Shop"]
 position = Vector2( 144.976, 92.5708 )
 scale = Vector2( 0.02, 0.02 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="current_ovulo_lbl" type="Label" parent="Shop"]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 95.0
-margin_top = 112.0
-margin_right = 115.0
-margin_bottom = 126.0
+margin_left = 84.0
+margin_top = 110.0
+margin_right = 118.0
+margin_bottom = 131.0
 rect_scale = Vector2( 0.7, 0.7 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -444,7 +498,10 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
 text = "0"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -452,7 +509,7 @@ max_lines_visible = -1
 [node name="current_ovulo" type="Sprite" parent="Shop"]
 position = Vector2( 113.976, 115.571 )
 scale = Vector2( 0.035, 0.035 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="UpTimer" to="." method="_on_UpTimer_timeout"]

@@ -97,7 +97,7 @@ func _on_btn_Shop_pressed():
 func _on_btn_BuyLong_pressed():
 	if GlobalSystem.ovulos >= 5:
 		GlobalSystem.change_type_player(2)
-		GlobalSystem.update_ovulos(-2)
+		GlobalSystem.update_ovulos(-5)
 		update_shop()
 		
 
@@ -119,24 +119,28 @@ func update_shop():
 	match GlobalSystem.type_player:
 		1:
 			$Shop/Esperm_base.show()
+			$Shop/current_ovulo_lbl.text = str(GlobalSystem.ovulos)
 		2:
 			$Shop/Esperm_long.hide()
 			$Shop/Esperm_long_normal.show()
 			$Shop/long_lbl.hide()
 			$Shop/btn_BuyLong.hide()
 			$Shop/ovulo_long.hide()
+			$Shop/current_ovulo_lbl.text = str(GlobalSystem.ovulos)
 		3:
 			$Shop/Esperm_hand.hide()
 			$Shop/Esperm_hand_normal.show()
 			$Shop/hand_lbl.hide()
 			$Shop/btn_BuyHand.hide()
 			$Shop/ovulo_hand.hide()
+			$Shop/current_ovulo_lbl.text = str(GlobalSystem.ovulos)
 		4:
 			$Shop/Esperm_cloak.hide()
 			$Shop/Esperm_cloak_normal.show()
 			$Shop/cloak_lbl.hide()
 			$Shop/btn_BuyLong.hide()
 			$Shop/ovulo_cloak.hide()
+			$Shop/current_ovulo_lbl.text = str(GlobalSystem.ovulos)
 
 
 
