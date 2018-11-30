@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var main = load("res://Hybrid-Sperm-Sprinter-GO2018/scenes/Main.tscn")
+onready var main = load("res://scenes/Main.tscn")
 
 func _ready():
 	$Tween.interpolate_property($Sperm, "position", Vector2(-25, 166), Vector2(74, 84), 1.8, Tween.TRANS_BACK, Tween.EASE_IN)

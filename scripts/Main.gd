@@ -1,15 +1,18 @@
 extends Node2D
 
-var pre_wall = preload("res://Hybrid-Sperm-Sprinter-GO2018/scenes/Walls.tscn")
-var pre_coin = preload("res://Hybrid-Sperm-Sprinter-GO2018/scenes/Coin.tscn")
-var pre_ovulo = preload("res://Hybrid-Sperm-Sprinter-GO2018/scenes/Ovulo.tscn")
-var main_Menu = preload("res://Hybrid-Sperm-Sprinter-GO2018/scenes/Menu_Main.tscn")
+var pre_wall = preload("res://scenes/Walls.tscn")
+var pre_ovulo = preload("res://scenes/Ovulo.tscn")
+var main_Menu = preload("res://scenes/Menu_Main.tscn")
 
 var ovulos
+var current_ovulos = 0
 var current_score
 var highscore
 
 var started = false
+
+var flag_ovulo_lbl = false
+var flag_score_lbl = false
 
 
 func update_current():
@@ -30,12 +33,16 @@ func _ready():
 	$GameOver.hide()
 	$Shop.hide()
 	$PowerUps.show()
+	$Score_count.show()
+	$Ovulo_count.show()
 	get_tree().paused = false
+	current_ovulos = 0
 
 
 func _process(delta):
 	if started:
 		current_score += delta
+		$Score_count/Score_count_lbl.text = str(int(current_score))
 
 
 func game_over():
@@ -45,11 +52,46 @@ func game_over():
 	$Walls.hide()
 	$GameOver.show()
 	$PowerUps.hide()
+	$Score_count.hide()
+	$Ovulo_count.hide()
 
 
 func ovulo_count():
 	GlobalSystem.ovulos_count()
 	ovulos = GlobalSystem.ovulos
+	current_ovulos += 1
+	$Ovulo_count/Ovulo_count_lbl.text = str(current_ovulos)
+	flag_ovulo_lbl = true
+	ovulo_lbl_show()
+
+
+func ovulo_lbl_show():
+	if flag_ovulo_lbl:
+		flag_score_lbl = true
+		score_count_hide()
+		$Ovulo_count/Ovulo_Tween.interpolate_property($Ovulo_count, "position", Vector2(100, -20), Vector2(100, 5), .5, Tween.TRANS_EXPO, Tween.EASE_IN)
+		$Ovulo_count/Ovulo_Tween.start() 
+
+
+func _on_Ovulo_Tween_tween_completed(object, key):
+	if flag_ovulo_lbl:
+		flag_ovulo_lbl = false
+		$Ovulo_count/Ovulo_Tween.interpolate_property($Ovulo_count, "position", Vector2(100, 5), Vector2(100, -20), 2, Tween.TRANS_EXPO, Tween.EASE_IN)
+		$Ovulo_count/Ovulo_Tween.start() 
+
+
+func score_count_hide():
+	if flag_score_lbl:
+		$Score_count/Score_Tween.interpolate_property($Score_count, "modulate", Color(1,1,1,1), Color(1,1,1,0), .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+		$Score_count/Score_Tween.start()
+
+
+func _on_Score_Tween_tween_completed(object, key):
+	if flag_score_lbl:
+		flag_score_lbl = false
+		$Score_count/Score_Tween.interpolate_property($Score_count, "modulate", Color(1,1,1,0), Color(1,1,1,1), 3, Tween.TRANS_QUAD, Tween.EASE_IN)
+		$Score_count/Score_Tween.start()
+
 
 func update_labels():
 	GlobalSystem.final_score(int(current_score))
@@ -141,6 +183,8 @@ func update_shop():
 			$Shop/btn_BuyLong.hide()
 			$Shop/ovulo_cloak.hide()
 			$Shop/current_ovulo_lbl.text = str(GlobalSystem.ovulos)
+
+
 
 
 
