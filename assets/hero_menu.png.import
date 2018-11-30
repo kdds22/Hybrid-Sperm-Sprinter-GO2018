@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hero_menu.png-b58ccf701b60aef8c0f8cf3b4e3f1c5a.stex"
+path="res://.import/hero_menu.png-43d5b99579c9108de3e80bdd6d716243.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/hero_menu.png"
-dest_files=[ "res://.import/hero_menu.png-b58ccf701b60aef8c0f8cf3b4e3f1c5a.stex" ]
+source_file="res://assets/hero_menu.png"
+dest_files=[ "res://.import/hero_menu.png-43d5b99579c9108de3e80bdd6d716243.stex" ]
 
 [params]
 

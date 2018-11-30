@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gameoff.png-ce210b5c0cd6cecd54d33de5b10ad1d1.stex"
+path="res://.import/gameoff.png-c1640c03d712bf208c40ecc889031567.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/gameoff.png"
-dest_files=[ "res://.import/gameoff.png-ce210b5c0cd6cecd54d33de5b10ad1d1.stex" ]
+source_file="res://assets/gameoff.png"
+dest_files=[ "res://.import/gameoff.png-c1640c03d712bf208c40ecc889031567.stex" ]
 
 [params]
 

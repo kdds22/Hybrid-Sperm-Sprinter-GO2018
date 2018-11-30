@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background.png-ec15e26001628f9929dfb5e3b1286b13.stex"
+path="res://.import/background.png-1fdba8b6a966ce2c2ffc607f7c096e95.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/background.png"
-dest_files=[ "res://.import/background.png-ec15e26001628f9929dfb5e3b1286b13.stex" ]
+source_file="res://assets/background.png"
+dest_files=[ "res://.import/background.png-1fdba8b6a966ce2c2ffc607f7c096e95.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armunlocked.png-2f59515e5bb7aa1ee67d585fa5d83ff6.stex"
+path="res://.import/armunlocked.png-41e5694a9eb8a4ae7d3c693de1865d51.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/armunlocked.png"
-dest_files=[ "res://.import/armunlocked.png-2f59515e5bb7aa1ee67d585fa5d83ff6.stex" ]
+source_file="res://assets/armunlocked.png"
+dest_files=[ "res://.import/armunlocked.png-41e5694a9eb8a4ae7d3c693de1865d51.stex" ]
 
 [params]
 

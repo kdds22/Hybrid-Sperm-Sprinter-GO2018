@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ovulo_full.png-1642e5ebd03a6201521aaef97b7d93ef.stex"
+path="res://.import/ovulo_full.png-a8a66424a5637cebaa0aa62f5e4d42df.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/ovulo_full.png"
-dest_files=[ "res://.import/ovulo_full.png-1642e5ebd03a6201521aaef97b7d93ef.stex" ]
+source_file="res://assets/ovulo_full.png"
+dest_files=[ "res://.import/ovulo_full.png-a8a66424a5637cebaa0aa62f5e4d42df.stex" ]
 
 [params]
 

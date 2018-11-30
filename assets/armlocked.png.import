@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armlocked.png-660420d008189dec9cfe555b850525c1.stex"
+path="res://.import/armlocked.png-1746cff8e1b6978d9028cd1d9fed7d57.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/armlocked.png"
-dest_files=[ "res://.import/armlocked.png-660420d008189dec9cfe555b850525c1.stex" ]
+source_file="res://assets/armlocked.png"
+dest_files=[ "res://.import/armlocked.png-1746cff8e1b6978d9028cd1d9fed7d57.stex" ]
 
 [params]
 

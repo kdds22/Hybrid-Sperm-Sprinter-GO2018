@@ -1,69 +1,62 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Ground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome.png" type="Texture" id=4]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/play.png" type="Texture" id=5]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/shop.png" type="Texture" id=6]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome best.png" type="Texture" id=7]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/nome score.png" type="Texture" id=8]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/SHOWG.TTF" type="DynamicFontData" id=9]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/botao de voltar.png" type="Texture" id=10]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/esper_1.png" type="Texture" id=11]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rabolocked.png" type="Texture" id=12]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/rabounlocked.png" type="Texture" id=13]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/ovulo_full.png" type="Texture" id=14]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/armlocked.png" type="Texture" id=15]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/armunlocked.png" type="Texture" id=16]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/capalocked.png" type="Texture" id=17]
-[ext_resource path="res://Hybrid-Sperm-Sprinter-GO2018/assets/capaunlocked.png" type="Texture" id=18]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/logo.png" type="Texture" id=4]
+[ext_resource path="res://assets/btn_continue.png" type="Texture" id=5]
+[ext_resource path="res://assets/btn_shop.png" type="Texture" id=6]
+[ext_resource path="res://assets/lbl_best.png" type="Texture" id=7]
+[ext_resource path="res://assets/lbl_score.png" type="Texture" id=8]
+[ext_resource path="res://assets/showg.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/btn_back.png" type="Texture" id=10]
+[ext_resource path="res://assets/esper_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/longlocked.png" type="Texture" id=12]
+[ext_resource path="res://assets/longunlocked.png" type="Texture" id=13]
+[ext_resource path="res://assets/ovulo_full.png" type="Texture" id=14]
+[ext_resource path="res://assets/armlocked.png" type="Texture" id=15]
+[ext_resource path="res://assets/armunlocked.png" type="Texture" id=16]
+[ext_resource path="res://assets/capalocked.png" type="Texture" id=17]
+[ext_resource path="res://assets/capaunlocked.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0.0
 extents = Vector2( 49.1727, 10 )
 
 [sub_resource type="DynamicFont" id=2]
 
 size = 15
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=3]
 
 size = 15
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=4]
 
 size = 12
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=5]
 
 size = 20
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 15
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 15
 font_data = ExtResource( 9 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 67.5019 ]
+"_edit_horizontal_guides_": [  ]
 }
 
 [node name="Ground" parent="." instance=ExtResource( 2 )]
@@ -71,11 +64,6 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 48.8574, 135.45 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )
@@ -97,16 +85,11 @@ position = Vector2( 301.883, 36.829 )
 position = Vector2( 301.883, 98.0547 )
 
 [node name="Timer" type="Timer" parent="."]
-process_mode = 1
 wait_time = 0.21
-one_shot = false
-autostart = false
 
 [node name="UpTimer" type="Timer" parent="."]
-process_mode = 1
-wait_time = 6.0
+wait_time = 2.0
 one_shot = true
-autostart = false
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -120,20 +103,10 @@ editor/display_folded = true
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameOver"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 59.0
 margin_top = 6.0
 margin_right = 184.0
 margin_bottom = 131.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.576471, 0.576471, 0.576471, 1 )
 
 [node name="Logo" type="Sprite" parent="GameOver"]
@@ -142,49 +115,19 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 
 [node name="btn_Continue" type="TextureButton" parent="GameOver"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 71.0
 margin_top = 106.0
 margin_right = 372.0
 margin_bottom = 259.0
 rect_scale = Vector2( 0.1, 0.1 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 5 )
 
 [node name="btn_Shop" type="TextureButton" parent="GameOver"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 135.0
 margin_top = 106.0
 margin_right = 436.0
 margin_bottom = 259.0
 rect_scale = Vector2( 0.1, 0.1 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 6 )
 
 [node name="Best" type="Sprite" parent="GameOver"]
@@ -198,50 +141,24 @@ scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 8 )
 
 [node name="Score_lbl" type="Label" parent="GameOver"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 71.0
 margin_top = 75.0
 margin_right = 116.0
 margin_bottom = 91.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
 text = "00000"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Best_lbl" type="Label" parent="GameOver"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 130.0
 margin_top = 75.0
 margin_right = 170.0
 margin_bottom = 89.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
 text = "00000"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Shop" type="Node2D" parent="."]
 pause_mode = 2
@@ -249,43 +166,18 @@ editor/display_folded = true
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 59.0
 margin_top = 5.0
 margin_right = 184.0
 margin_bottom = 130.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.576471, 0.576471, 0.576471, 1 )
 
 [node name="btn_Back" type="TextureButton" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 126.0
 margin_top = 108.0
 margin_right = 427.0
 margin_bottom = 261.0
 rect_scale = Vector2( 0.1, 0.1 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 10 )
 
 [node name="Esperm_base" type="Sprite" parent="Shop"]
@@ -305,50 +197,22 @@ scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 13 )
 
 [node name="long_lbl" type="Label" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 130.0
 margin_top = 39.0
 margin_right = 150.0
 margin_bottom = 53.0
 rect_scale = Vector2( 0.6, 0.6 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 text = "5"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="btn_BuyLong" type="TextureButton" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 154.0
 margin_top = 39.0
 margin_right = 455.0
 margin_bottom = 193.0
 rect_scale = Vector2( 0.05, 0.05 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 6 )
 
 [node name="ovulo_long" type="Sprite" parent="Shop"]
@@ -368,50 +232,22 @@ scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 16 )
 
 [node name="hand_lbl" type="Label" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 68.0
 margin_top = 89.0
 margin_right = 88.0
 margin_bottom = 103.0
 rect_scale = Vector2( 0.6, 0.6 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 text = "10"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="btn_BuyHand" type="TextureButton" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 94.0
 margin_top = 89.0
 margin_right = 395.0
 margin_bottom = 243.0
 rect_scale = Vector2( 0.05, 0.05 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 6 )
 
 [node name="ovulo_hand" type="Sprite" parent="Shop"]
@@ -431,50 +267,22 @@ scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 18 )
 
 [node name="cloak_lbl" type="Label" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 130.0
 margin_top = 89.0
 margin_right = 150.0
 margin_bottom = 103.0
 rect_scale = Vector2( 0.6, 0.6 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 text = "20"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="btn_BuyCloak" type="TextureButton" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 154.0
 margin_top = 89.0
 margin_right = 455.0
 margin_bottom = 243.0
 rect_scale = Vector2( 0.05, 0.05 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 6 )
 
 [node name="ovulo_cloak" type="Sprite" parent="Shop"]
@@ -483,33 +291,52 @@ scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 14 )
 
 [node name="current_ovulo_lbl" type="Label" parent="Shop"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 84.0
 margin_top = 110.0
 margin_right = 118.0
 margin_bottom = 131.0
 rect_scale = Vector2( 0.7, 0.7 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 5 )
 text = "0"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="current_ovulo" type="Sprite" parent="Shop"]
 position = Vector2( 113.976, 115.571 )
 scale = Vector2( 0.035, 0.035 )
 texture = ExtResource( 14 )
+
+[node name="Ovulo_count" type="Node2D" parent="."]
+position = Vector2( 100, -20 )
+
+[node name="Ovulo_count_lbl" type="Label" parent="Ovulo_count"]
+margin_right = 40.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Ovulo_Tween" type="Tween" parent="Ovulo_count"]
+
+[node name="Sprite" type="Sprite" parent="Ovulo_count"]
+position = Vector2( 38.1123, 6.76184 )
+scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 14 )
+
+[node name="Score_count" type="Node2D" parent="."]
+
+[node name="Score_count_lbl" type="Label" parent="Score_count"]
+margin_left = 109.0
+margin_top = 7.0
+margin_right = 149.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 7 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="Score_Tween" type="Tween" parent="Score_count"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="UpTimer" to="." method="_on_UpTimer_timeout"]
@@ -519,3 +346,5 @@ texture = ExtResource( 14 )
 [connection signal="pressed" from="Shop/btn_BuyLong" to="." method="_on_btn_BuyLong_pressed"]
 [connection signal="pressed" from="Shop/btn_BuyHand" to="." method="_on_btn_BuyHand_pressed"]
 [connection signal="pressed" from="Shop/btn_BuyCloak" to="." method="_on_btn_BuyCloak_pressed"]
+[connection signal="tween_completed" from="Ovulo_count/Ovulo_Tween" to="." method="_on_Ovulo_Tween_tween_completed"]
+[connection signal="tween_completed" from="Score_count/Score_Tween" to="." method="_on_Score_Tween_tween_completed"]

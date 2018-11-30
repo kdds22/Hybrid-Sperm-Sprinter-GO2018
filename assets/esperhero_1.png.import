@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/esperhero_1.png-0011d05b96462fe5605fbc12e79df502.stex"
+path="res://.import/esperhero_1.png-c78403a608e9f80f3d6320a01f810f9e.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/esperhero_1.png"
-dest_files=[ "res://.import/esperhero_1.png-0011d05b96462fe5605fbc12e79df502.stex" ]
+source_file="res://assets/esperhero_1.png"
+dest_files=[ "res://.import/esperhero_1.png-c78403a608e9f80f3d6320a01f810f9e.stex" ]
 
 [params]
 

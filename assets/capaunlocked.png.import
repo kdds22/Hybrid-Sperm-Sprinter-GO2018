@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/capaunlocked.png-534dccf4dc787c0b84411c10346fce8c.stex"
+path="res://.import/capaunlocked.png-bbb67e155d5739c037d95d674508c62f.stex"
 
 [deps]
 
-source_file="res://Hybrid-Sperm-Sprinter-GO2018/assets/capaunlocked.png"
-dest_files=[ "res://.import/capaunlocked.png-534dccf4dc787c0b84411c10346fce8c.stex" ]
+source_file="res://assets/capaunlocked.png"
+dest_files=[ "res://.import/capaunlocked.png-bbb67e155d5739c037d95d674508c62f.stex" ]
 
 [params]
 
