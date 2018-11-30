@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/esper_1.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/esperlong_1.png" type="Texture" id=11]
 [ext_resource path="res://assets/esperlong_2.png" type="Texture" id=12]
 [ext_resource path="res://assets/esperlong_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/flap.ogg" type="AudioStream" id=14]
 
 [sub_resource type="Animation" id=1]
 
@@ -157,5 +158,11 @@ rotation = 1.5708
 shape = SubResource( 5 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = 5.0
+pitch_scale = 10.0
+bus = "Player_Flap"
 
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

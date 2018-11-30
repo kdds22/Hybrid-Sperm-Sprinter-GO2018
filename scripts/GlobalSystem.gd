@@ -8,6 +8,7 @@ var type_player = 1
 
 func _ready():
 	highscore = 0
+	
 
 
 func ovulos_count():

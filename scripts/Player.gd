@@ -18,6 +18,7 @@ func _input(event):
 
 func swin():
 	linear_velocity = Vector2()
+	$AudioStreamPlayer.play()
 	apply_impulse(Vector2(), Vector2(0, -speed))
 	_type()
 

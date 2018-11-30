@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Menu_Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Sperm.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/btn_start.png" type="Texture" id=7]
 [ext_resource path="res://assets/btn_exit.png" type="Texture" id=8]
 [ext_resource path="res://assets/logo.png" type="Texture" id=9]
+[ext_resource path="res://assets/Twisting.ogg" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -37,6 +38,7 @@ position = Vector2( 30.9827, 79.84 )
 rotation = -0.613308
 scale = Vector2( 0.125, 0.125 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Sperm_figurante2" type="AnimatedSprite" parent="figurantes_1"]
@@ -44,6 +46,7 @@ position = Vector2( 24.6273, 115.987 )
 rotation = -0.73046
 scale = Vector2( 0.125, 0.125 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Sperm_figurante3" type="AnimatedSprite" parent="figurantes_1"]
@@ -51,7 +54,6 @@ position = Vector2( 32.1744, 139.819 )
 rotation = -0.84025
 scale = Vector2( 0.125, 0.125 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="Sperm_figurante4" type="AnimatedSprite" parent="figurantes_1"]
@@ -59,6 +61,7 @@ position = Vector2( 59.1849, 151.339 )
 rotation = -1.03414
 scale = Vector2( 0.125, 0.125 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="figurantes_2" type="Node2D" parent="."]
@@ -70,6 +73,7 @@ position = Vector2( 76.3361, 127.503 )
 rotation = -1.29571
 scale = Vector2( 0.07, 0.07 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Sperm_figurante9" type="AnimatedSprite" parent="figurantes_2"]
@@ -77,6 +81,7 @@ position = Vector2( 59.256, 122.737 )
 rotation = -1.11609
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Sperm_figurante10" type="AnimatedSprite" parent="figurantes_2"]
@@ -84,7 +89,6 @@ position = Vector2( 13.5762, 139.817 )
 rotation = -1.14304
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="Start_btn" type="TextureButton" parent="."]
@@ -109,6 +113,10 @@ scale = Vector2( 0.55, 0.38 )
 texture = ExtResource( 9 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
 
 [connection signal="pressed" from="Start_btn" to="." method="_on_Start_btn_pressed"]
 [connection signal="pressed" from="Exit_btn" to="." method="_on_Exit_btn_pressed"]
