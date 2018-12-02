@@ -9,6 +9,7 @@ signal dead
 
 
 func _ready():
+	type = int(GlobalSystem.type_player)
 	choose_state()
 
 
@@ -25,7 +26,6 @@ func swin():
 
 
 func choose_state():
-	type = GlobalSystem.type_player
 	_type()
 
 func _type():

@@ -20,6 +20,7 @@ func update_current():
 	GlobalSystem.reset_current_score()
 	current_score = GlobalSystem.current_score
 	highscore = GlobalSystem.highscore
+	$Player.type = int(GlobalSystem.type_player)
 
 func _ready():
 	update_current()
@@ -94,9 +95,10 @@ func _on_Score_Tween_tween_completed(object, key):
 
 
 func update_labels():
+	GlobalSystem.type_player = int($Player.type)
 	GlobalSystem.final_score(int(current_score))
 	$GameOver/Score_lbl.text = str(int(GlobalSystem.current_score))
-	$GameOver/Best_lbl.text = str(int(highscore))
+	$GameOver/Best_lbl.text = str(int(GlobalSystem.highscore))
 	$Shop/current_ovulo_lbl.text = str(int(GlobalSystem.ovulos))
 
 

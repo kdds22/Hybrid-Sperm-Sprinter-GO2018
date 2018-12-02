@@ -10,7 +10,9 @@ func _process(delta):
 
 func _on_Ovulo_body_entered(body):
 	if body.is_in_group("Player"):
-		$CollisionShape2D.disabled = true
+		if self.call_deferred('free'):
+			$CollisionShape2D.set_deferred("disabled", true)
+			$CollisionShape2D.disabled = true
 		$Tween.interpolate_property(self, 'modulate', 1, 0, .2, Tween.TRANS_EXPO, Tween.EASE_IN)
 		$Tween.interpolate_property(self, 'scale', scale, Vector2(scale.x+1, scale.y+1), .2, Tween.TRANS_EXPO, Tween.EASE_IN)
 		$Tween.start()
